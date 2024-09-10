@@ -1,0 +1,60 @@
+2022-05-20 11:27:44
+{
+  "classifier": "TextCNN",
+  "pretrained": "bert-base-chinese",
+  "train_file": "data/train_dataset_en.xlsx",
+  "val_file": "data/val_dataset_en.xlsx",
+  "test_file": "data/test_dataset_en.xlsx",
+  "embedding_method": "",
+  "token_level": "English",
+  "stop_words": true,
+  "embedding_dim": 300,
+  "token_file": "data/word-token2id-en",
+  "classes": [
+    "泛财经",
+    "创业",
+    "美女",
+    "鸡汤",
+    "数字货币",
+    "储蓄",
+    "基金",
+    "保险",
+    "股票-技术面分析",
+    "税务",
+    "股票-其他",
+    "房产",
+    "股票-行业分析",
+    "股票-基本面分析",
+    "其它"
+  ],
+  "checkpoints_dir": "model/textcnn-en",
+  "checkpoint_name": "textcnn-en",
+  "num_filters": 64,
+  "learning_rate": 0.0005,
+  "optimizer": "Adam",
+  "epoch": 100,
+  "max_to_keep": 1,
+  "print_per_batch": 100,
+  "is_early_stop": true,
+  "use_attention": false,
+  "attention_size": 300,
+  "patient": 8,
+  "batch_size": 256,
+  "max_sequence_length": 300,
+  "dropout_rate": 0,
+  "hidden_dim": 256,
+  "encoder_num": 1,
+  "head_num": 12,
+  "metrics_average": "micro",
+  "use_focal_loss": true,
+  "use_gan": false,
+  "gan_method": "pgd",
+  "attack_round": 3,
+  "use_r_drop": false
+}
+vocab files not exist...
+dataManager initialed...
+mode: train_classifier
+model: TextCNN
+loading data...
+loading data...

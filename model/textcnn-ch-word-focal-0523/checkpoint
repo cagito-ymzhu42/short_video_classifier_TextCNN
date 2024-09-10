@@ -1,0 +1,4 @@
+model_checkpoint_path: "textcnn-ch-word-18"
+all_model_checkpoint_paths: "textcnn-ch-word-18"
+all_model_checkpoint_timestamps: 1653290541.3008676
+last_preserved_timestamp: 1653290060.6531372

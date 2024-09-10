@@ -1,0 +1,551 @@
+2022-05-20 11:28:27
+{
+  "classifier": "TextCNN",
+  "pretrained": "bert-base-chinese",
+  "train_file": "data/train_dataset_en.xlsx",
+  "val_file": "data/val_dataset_en.xlsx",
+  "test_file": "data/test_dataset_en.xlsx",
+  "embedding_method": "",
+  "token_level": "English",
+  "stop_words": true,
+  "embedding_dim": 300,
+  "token_file": "data/word-token2id-en",
+  "classes": [
+    "泛财经",
+    "创业",
+    "美女",
+    "鸡汤",
+    "数字货币",
+    "储蓄",
+    "基金",
+    "保险",
+    "股票-技术面分析",
+    "税务",
+    "股票-其他",
+    "房产",
+    "股票-行业分析",
+    "股票-基本面分析",
+    "其它"
+  ],
+  "checkpoints_dir": "model/textcnn-en",
+  "checkpoint_name": "textcnn-en",
+  "num_filters": 64,
+  "learning_rate": 0.0005,
+  "optimizer": "Adam",
+  "epoch": 100,
+  "max_to_keep": 1,
+  "print_per_batch": 100,
+  "is_early_stop": true,
+  "use_attention": false,
+  "attention_size": 300,
+  "patient": 8,
+  "batch_size": 256,
+  "max_sequence_length": 300,
+  "dropout_rate": 0,
+  "hidden_dim": 256,
+  "encoder_num": 1,
+  "head_num": 12,
+  "metrics_average": "micro",
+  "use_focal_loss": true,
+  "use_gan": false,
+  "gan_method": "pgd",
+  "attack_round": 3,
+  "use_r_drop": false
+}
+dataManager initialed...
+mode: train_classifier
+model: TextCNN
+loading data...
+loading data...
+++++++++++++++++++++training starting++++++++++++++++++++
+
+epoch:1/100
+start evaluate engines...
+
+股票-其他: {'precision': 0.5487804878048781, 'recall': 0.6923076923076923, 'f1-score': 0.6122448979591837, 'support': 65}
+其它: {'precision': 0.21940928270042195, 'recall': 1.0, 'f1-score': 0.35986159169550175, 'support': 52}
+loss: 0.526 precision: 0.304 recall: 0.829 f1: 0.445 
+time consumption:0.19(min)
+saved the new best model with f1: 0.445
+
+epoch:2/100
+start evaluate engines...
+
+股票-其他: {'precision': 0.46846846846846846, 'recall': 0.8, 'f1-score': 0.5909090909090909, 'support': 65}
+其它: {'precision': 0.25, 'recall': 1.0, 'f1-score': 0.4, 'support': 52}
+loss: 0.457 precision: 0.326 recall: 0.889 f1: 0.477 
+time consumption:0.18(min)
+saved the new best model with f1: 0.477
+
+epoch:3/100
+start evaluate engines...
+
+泛财经: {'precision': 0.2647058823529412, 'recall': 0.17307692307692307, 'f1-score': 0.20930232558139533, 'support': 52}
+数字货币: {'precision': 1.0, 'recall': 0.15625, 'f1-score': 0.2702702702702703, 'support': 32}
+股票-其他: {'precision': 0.3719512195121951, 'recall': 0.9384615384615385, 'f1-score': 0.5327510917030568, 'support': 65}
+其它: {'precision': 0.3448275862068966, 'recall': 0.7692307692307693, 'f1-score': 0.47619047619047616, 'support': 52}
+loss: 0.427 precision: 0.361 recall: 0.572 f1: 0.442 
+time consumption:0.18(min)
+
+epoch:4/100
+start evaluate engines...
+
+泛财经: {'precision': 0.2571428571428571, 'recall': 0.6923076923076923, 'f1-score': 0.37499999999999994, 'support': 52}
+鸡汤: {'precision': 1.0, 'recall': 0.03125, 'f1-score': 0.06060606060606061, 'support': 32}
+数字货币: {'precision': 1.0, 'recall': 0.65625, 'f1-score': 0.7924528301886793, 'support': 32}
+股票-其他: {'precision': 0.5652173913043478, 'recall': 0.8, 'f1-score': 0.6624203821656051, 'support': 65}
+其它: {'precision': 0.46153846153846156, 'recall': 0.5769230769230769, 'f1-score': 0.5128205128205129, 'support': 52}
+loss: 0.395 precision: 0.439 recall: 0.601 f1: 0.507 
+time consumption:0.19(min)
+saved the new best model with f1: 0.507
+
+epoch:5/100
+start evaluate engines...
+
+泛财经: {'precision': 0.25882352941176473, 'recall': 0.4230769230769231, 'f1-score': 0.3211678832116789, 'support': 52}
+鸡汤: {'precision': 1.0, 'recall': 0.0625, 'f1-score': 0.11764705882352941, 'support': 32}
+数字货币: {'precision': 0.9565217391304348, 'recall': 0.6875, 'f1-score': 0.8, 'support': 32}
+储蓄: {'precision': 1.0, 'recall': 0.09523809523809523, 'f1-score': 0.17391304347826084, 'support': 21}
+股票-其他: {'precision': 0.5531914893617021, 'recall': 0.8, 'f1-score': 0.6540880503144655, 'support': 65}
+其它: {'precision': 0.3893805309734513, 'recall': 0.8461538461538461, 'f1-score': 0.5333333333333333, 'support': 52}
+loss: 0.357 precision: 0.451 recall: 0.567 f1: 0.503 
+time consumption:0.19(min)
+
+epoch:6/100
+start evaluate engines...
+
+泛财经: {'precision': 0.2782608695652174, 'recall': 0.6153846153846154, 'f1-score': 0.38323353293413176, 'support': 52}
+鸡汤: {'precision': 0.8571428571428571, 'recall': 0.1875, 'f1-score': 0.30769230769230765, 'support': 32}
+数字货币: {'precision': 0.92, 'recall': 0.71875, 'f1-score': 0.8070175438596492, 'support': 32}
+储蓄: {'precision': 1.0, 'recall': 0.23809523809523808, 'f1-score': 0.3846153846153846, 'support': 21}
+股票-其他: {'precision': 0.6296296296296297, 'recall': 0.7846153846153846, 'f1-score': 0.6986301369863014, 'support': 65}
+房产: {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 15}
+其它: {'precision': 0.4588235294117647, 'recall': 0.75, 'f1-score': 0.5693430656934307, 'support': 52}
+loss: 0.326 precision: 0.489 recall: 0.580 f1: 0.531 
+time consumption:0.19(min)
+saved the new best model with f1: 0.531
+
+epoch:7/100
+start evaluate engines...
+
+泛财经: {'precision': 0.3595505617977528, 'recall': 0.6153846153846154, 'f1-score': 0.45390070921985815, 'support': 52}
+鸡汤: {'precision': 0.7142857142857143, 'recall': 0.46875, 'f1-score': 0.5660377358490566, 'support': 32}
+数字货币: {'precision': 0.9230769230769231, 'recall': 0.75, 'f1-score': 0.8275862068965517, 'support': 32}
+储蓄: {'precision': 0.8333333333333334, 'recall': 0.47619047619047616, 'f1-score': 0.6060606060606061, 'support': 21}
+股票-其他: {'precision': 0.6219512195121951, 'recall': 0.7846153846153846, 'f1-score': 0.6938775510204082, 'support': 65}
+房产: {'precision': 0.6666666666666666, 'recall': 0.13333333333333333, 'f1-score': 0.2222222222222222, 'support': 15}
+其它: {'precision': 0.47674418604651164, 'recall': 0.7884615384615384, 'f1-score': 0.5942028985507246, 'support': 52}
+loss: 0.299 precision: 0.549 recall: 0.651 f1: 0.595 
+time consumption:0.19(min)
+saved the new best model with f1: 0.595
+
+epoch:8/100
+start evaluate engines...
+
+泛财经: {'precision': 0.37777777777777777, 'recall': 0.6538461538461539, 'f1-score': 0.4788732394366198, 'support': 52}
+鸡汤: {'precision': 0.7083333333333334, 'recall': 0.53125, 'f1-score': 0.6071428571428571, 'support': 32}
+数字货币: {'precision': 0.9259259259259259, 'recall': 0.78125, 'f1-score': 0.847457627118644, 'support': 32}
+储蓄: {'precision': 0.7142857142857143, 'recall': 0.47619047619047616, 'f1-score': 0.5714285714285714, 'support': 21}
+股票-其他: {'precision': 0.620253164556962, 'recall': 0.7538461538461538, 'f1-score': 0.6805555555555556, 'support': 65}
+房产: {'precision': 0.6666666666666666, 'recall': 0.13333333333333333, 'f1-score': 0.2222222222222222, 'support': 15}
+其它: {'precision': 0.5, 'recall': 0.7884615384615384, 'f1-score': 0.6119402985074627, 'support': 52}
+loss: 0.276 precision: 0.558 recall: 0.662 f1: 0.605 
+time consumption:0.18(min)
+saved the new best model with f1: 0.605
+
+epoch:9/100
+start evaluate engines...
+
+泛财经: {'precision': 0.36470588235294116, 'recall': 0.5961538461538461, 'f1-score': 0.45255474452554745, 'support': 52}
+鸡汤: {'precision': 0.68, 'recall': 0.53125, 'f1-score': 0.5964912280701754, 'support': 32}
+数字货币: {'precision': 0.9285714285714286, 'recall': 0.8125, 'f1-score': 0.8666666666666666, 'support': 32}
+储蓄: {'precision': 0.6470588235294118, 'recall': 0.5238095238095238, 'f1-score': 0.5789473684210527, 'support': 21}
+股票-其他: {'precision': 0.6075949367088608, 'recall': 0.7384615384615385, 'f1-score': 0.6666666666666666, 'support': 65}
+房产: {'precision': 0.7777777777777778, 'recall': 0.4666666666666667, 'f1-score': 0.5833333333333334, 'support': 15}
+其它: {'precision': 0.5263157894736842, 'recall': 0.7692307692307693, 'f1-score': 0.625, 'support': 52}
+loss: 0.256 precision: 0.564 recall: 0.669 f1: 0.612 
+time consumption:0.19(min)
+saved the new best model with f1: 0.612
+
+epoch:10/100
+start evaluate engines...
+
+泛财经: {'precision': 0.37349397590361444, 'recall': 0.5961538461538461, 'f1-score': 0.45925925925925926, 'support': 52}
+鸡汤: {'precision': 0.72, 'recall': 0.5625, 'f1-score': 0.631578947368421, 'support': 32}
+数字货币: {'precision': 0.9310344827586207, 'recall': 0.84375, 'f1-score': 0.8852459016393444, 'support': 32}
+储蓄: {'precision': 0.7222222222222222, 'recall': 0.6190476190476191, 'f1-score': 0.6666666666666666, 'support': 21}
+税务: {'precision': 0.3333333333333333, 'recall': 0.14285714285714285, 'f1-score': 0.2, 'support': 7}
+股票-其他: {'precision': 0.618421052631579, 'recall': 0.7230769230769231, 'f1-score': 0.6666666666666667, 'support': 65}
+房产: {'precision': 0.8181818181818182, 'recall': 0.6, 'f1-score': 0.6923076923076923, 'support': 15}
+其它: {'precision': 0.527027027027027, 'recall': 0.75, 'f1-score': 0.619047619047619, 'support': 52}
+loss: 0.241 precision: 0.580 recall: 0.670 f1: 0.622 
+time consumption:0.19(min)
+saved the new best model with f1: 0.622
+
+epoch:11/100
+start evaluate engines...
+
+泛财经: {'precision': 0.36486486486486486, 'recall': 0.5192307692307693, 'f1-score': 0.4285714285714286, 'support': 52}
+鸡汤: {'precision': 0.6060606060606061, 'recall': 0.625, 'f1-score': 0.6153846153846154, 'support': 32}
+数字货币: {'precision': 0.9310344827586207, 'recall': 0.84375, 'f1-score': 0.8852459016393444, 'support': 32}
+储蓄: {'precision': 0.7, 'recall': 0.6666666666666666, 'f1-score': 0.6829268292682926, 'support': 21}
+税务: {'precision': 0.3333333333333333, 'recall': 0.14285714285714285, 'f1-score': 0.2, 'support': 7}
+股票-其他: {'precision': 0.6153846153846154, 'recall': 0.7384615384615385, 'f1-score': 0.6713286713286714, 'support': 65}
+房产: {'precision': 0.9166666666666666, 'recall': 0.7333333333333333, 'f1-score': 0.8148148148148148, 'support': 15}
+其它: {'precision': 0.5428571428571428, 'recall': 0.7307692307692307, 'f1-score': 0.6229508196721311, 'support': 52}
+loss: 0.228 precision: 0.583 recall: 0.674 f1: 0.625 
+time consumption:0.19(min)
+saved the new best model with f1: 0.625
+
+epoch:12/100
+start evaluate engines...
+
+泛财经: {'precision': 0.3783783783783784, 'recall': 0.5384615384615384, 'f1-score': 0.4444444444444445, 'support': 52}
+鸡汤: {'precision': 0.59375, 'recall': 0.59375, 'f1-score': 0.59375, 'support': 32}
+数字货币: {'precision': 0.9642857142857143, 'recall': 0.84375, 'f1-score': 0.8999999999999999, 'support': 32}
+储蓄: {'precision': 0.7, 'recall': 0.6666666666666666, 'f1-score': 0.6829268292682926, 'support': 21}
+税务: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+股票-其他: {'precision': 0.6233766233766234, 'recall': 0.7384615384615385, 'f1-score': 0.676056338028169, 'support': 65}
+房产: {'precision': 0.9166666666666666, 'recall': 0.7333333333333333, 'f1-score': 0.8148148148148148, 'support': 15}
+股票-基本面分析: {'precision': 0.0, 'recall': 0.0, 'f1-score': 0.0, 'support': 8}
+其它: {'precision': 0.5492957746478874, 'recall': 0.75, 'f1-score': 0.6341463414634145, 'support': 52}
+loss: 0.218 precision: 0.589 recall: 0.662 f1: 0.624 
+time consumption:0.19(min)
+
+epoch:13/100
+start evaluate engines...
+
+泛财经: {'precision': 0.39436619718309857, 'recall': 0.5384615384615384, 'f1-score': 0.4552845528455284, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.14285714285714285, 'f1-score': 0.22222222222222224, 'support': 7}
+鸡汤: {'precision': 0.6129032258064516, 'recall': 0.59375, 'f1-score': 0.6031746031746031, 'support': 32}
+数字货币: {'precision': 0.9642857142857143, 'recall': 0.84375, 'f1-score': 0.8999999999999999, 'support': 32}
+储蓄: {'precision': 0.7, 'recall': 0.6666666666666666, 'f1-score': 0.6829268292682926, 'support': 21}
+股票-技术面分析: {'precision': 0.5, 'recall': 0.1, 'f1-score': 0.16666666666666669, 'support': 10}
+税务: {'precision': 0.6, 'recall': 0.42857142857142855, 'f1-score': 0.5, 'support': 7}
+股票-其他: {'precision': 0.6533333333333333, 'recall': 0.7538461538461538, 'f1-score': 0.7, 'support': 65}
+房产: {'precision': 0.9166666666666666, 'recall': 0.7333333333333333, 'f1-score': 0.8148148148148148, 'support': 15}
+股票-基本面分析: {'precision': 0.5, 'recall': 0.125, 'f1-score': 0.2, 'support': 8}
+其它: {'precision': 0.5633802816901409, 'recall': 0.7692307692307693, 'f1-score': 0.6504065040650407, 'support': 52}
+loss: 0.210 precision: 0.608 recall: 0.645 f1: 0.626 
+time consumption:0.19(min)
+saved the new best model with f1: 0.626
+
+epoch:14/100
+start evaluate engines...
+
+泛财经: {'precision': 0.417910447761194, 'recall': 0.5384615384615384, 'f1-score': 0.47058823529411764, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.14285714285714285, 'f1-score': 0.22222222222222224, 'support': 7}
+鸡汤: {'precision': 0.59375, 'recall': 0.59375, 'f1-score': 0.59375, 'support': 32}
+数字货币: {'precision': 0.9310344827586207, 'recall': 0.84375, 'f1-score': 0.8852459016393444, 'support': 32}
+储蓄: {'precision': 0.7, 'recall': 0.6666666666666666, 'f1-score': 0.6829268292682926, 'support': 21}
+股票-技术面分析: {'precision': 0.5, 'recall': 0.1, 'f1-score': 0.16666666666666669, 'support': 10}
+税务: {'precision': 0.6, 'recall': 0.42857142857142855, 'f1-score': 0.5, 'support': 7}
+股票-其他: {'precision': 0.6710526315789473, 'recall': 0.7846153846153846, 'f1-score': 0.7234042553191491, 'support': 65}
+房产: {'precision': 0.8461538461538461, 'recall': 0.7333333333333333, 'f1-score': 0.7857142857142856, 'support': 15}
+股票-基本面分析: {'precision': 0.6666666666666666, 'recall': 0.25, 'f1-score': 0.36363636363636365, 'support': 8}
+其它: {'precision': 0.5714285714285714, 'recall': 0.7692307692307693, 'f1-score': 0.6557377049180327, 'support': 52}
+loss: 0.204 precision: 0.618 recall: 0.654 f1: 0.635 
+time consumption:0.20(min)
+saved the new best model with f1: 0.635
+
+epoch:15/100
+start evaluate engines...
+
+泛财经: {'precision': 0.40625, 'recall': 0.5, 'f1-score': 0.4482758620689655, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.14285714285714285, 'f1-score': 0.22222222222222224, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.14285714285714285, 'f1-score': 0.25, 'support': 7}
+鸡汤: {'precision': 0.6, 'recall': 0.5625, 'f1-score': 0.5806451612903225, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.7142857142857143, 'recall': 0.7142857142857143, 'f1-score': 0.7142857142857143, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 6}
+股票-技术面分析: {'precision': 1.0, 'recall': 0.2, 'f1-score': 0.33333333333333337, 'support': 10}
+税务: {'precision': 0.7142857142857143, 'recall': 0.7142857142857143, 'f1-score': 0.7142857142857143, 'support': 7}
+股票-其他: {'precision': 0.6891891891891891, 'recall': 0.7846153846153846, 'f1-score': 0.7338129496402878, 'support': 65}
+房产: {'precision': 0.8, 'recall': 0.8, 'f1-score': 0.8000000000000002, 'support': 15}
+股票-基本面分析: {'precision': 0.6666666666666666, 'recall': 0.25, 'f1-score': 0.36363636363636365, 'support': 8}
+其它: {'precision': 0.5882352941176471, 'recall': 0.7692307692307693, 'f1-score': 0.6666666666666667, 'support': 52}
+loss: 0.199 precision: 0.633 recall: 0.643 f1: 0.638 
+time consumption:0.20(min)
+saved the new best model with f1: 0.638
+
+epoch:16/100
+start evaluate engines...
+
+泛财经: {'precision': 0.41935483870967744, 'recall': 0.5, 'f1-score': 0.45614035087719296, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.14285714285714285, 'f1-score': 0.25, 'support': 7}
+鸡汤: {'precision': 0.6, 'recall': 0.5625, 'f1-score': 0.5806451612903225, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.7142857142857143, 'recall': 0.7142857142857143, 'f1-score': 0.7142857142857143, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 6}
+股票-技术面分析: {'precision': 1.0, 'recall': 0.3, 'f1-score': 0.4615384615384615, 'support': 10}
+税务: {'precision': 0.7142857142857143, 'recall': 0.7142857142857143, 'f1-score': 0.7142857142857143, 'support': 7}
+股票-其他: {'precision': 0.7183098591549296, 'recall': 0.7846153846153846, 'f1-score': 0.75, 'support': 65}
+房产: {'precision': 0.8, 'recall': 0.8, 'f1-score': 0.8000000000000002, 'support': 15}
+股票-基本面分析: {'precision': 0.8, 'recall': 0.5, 'f1-score': 0.6153846153846154, 'support': 8}
+其它: {'precision': 0.5797101449275363, 'recall': 0.7692307692307693, 'f1-score': 0.6611570247933884, 'support': 52}
+loss: 0.194 precision: 0.646 recall: 0.656 f1: 0.651 
+time consumption:0.19(min)
+saved the new best model with f1: 0.651
+
+epoch:17/100
+start evaluate engines...
+
+泛财经: {'precision': 0.42105263157894735, 'recall': 0.46153846153846156, 'f1-score': 0.44036697247706424, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.2857142857142857, 'f1-score': 0.4444444444444445, 'support': 7}
+鸡汤: {'precision': 0.6, 'recall': 0.5625, 'f1-score': 0.5806451612903225, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6818181818181818, 'recall': 0.7142857142857143, 'f1-score': 0.6976744186046512, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.5, 'f1-score': 0.6666666666666666, 'support': 6}
+股票-技术面分析: {'precision': 0.75, 'recall': 0.3, 'f1-score': 0.4285714285714285, 'support': 10}
+税务: {'precision': 0.75, 'recall': 0.8571428571428571, 'f1-score': 0.7999999999999999, 'support': 7}
+股票-其他: {'precision': 0.6944444444444444, 'recall': 0.7692307692307693, 'f1-score': 0.72992700729927, 'support': 65}
+房产: {'precision': 0.8, 'recall': 0.8, 'f1-score': 0.8000000000000002, 'support': 15}
+股票-基本面分析: {'precision': 0.8, 'recall': 0.5, 'f1-score': 0.6153846153846154, 'support': 8}
+其它: {'precision': 0.5882352941176471, 'recall': 0.7692307692307693, 'f1-score': 0.6666666666666667, 'support': 52}
+loss: 0.191 precision: 0.646 recall: 0.656 f1: 0.651 
+time consumption:0.20(min)
+
+epoch:18/100
+start evaluate engines...
+
+泛财经: {'precision': 0.41379310344827586, 'recall': 0.46153846153846156, 'f1-score': 0.43636363636363634, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.2857142857142857, 'f1-score': 0.4444444444444445, 'support': 7}
+鸡汤: {'precision': 0.6129032258064516, 'recall': 0.59375, 'f1-score': 0.6031746031746031, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6818181818181818, 'recall': 0.7142857142857143, 'f1-score': 0.6976744186046512, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.5, 'f1-score': 0.6666666666666666, 'support': 6}
+股票-技术面分析: {'precision': 0.75, 'recall': 0.3, 'f1-score': 0.4285714285714285, 'support': 10}
+税务: {'precision': 0.75, 'recall': 0.8571428571428571, 'f1-score': 0.7999999999999999, 'support': 7}
+股票-其他: {'precision': 0.7, 'recall': 0.7538461538461538, 'f1-score': 0.725925925925926, 'support': 65}
+房产: {'precision': 0.75, 'recall': 0.8, 'f1-score': 0.7741935483870969, 'support': 15}
+股票-基本面分析: {'precision': 0.5714285714285714, 'recall': 0.5, 'f1-score': 0.5333333333333333, 'support': 8}
+其它: {'precision': 0.6, 'recall': 0.75, 'f1-score': 0.6666666666666665, 'support': 52}
+loss: 0.188 precision: 0.643 recall: 0.653 f1: 0.648 
+time consumption:0.20(min)
+
+epoch:19/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4444444444444444, 'recall': 0.46153846153846156, 'f1-score': 0.4528301886792453, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.2857142857142857, 'f1-score': 0.4444444444444445, 'support': 7}
+鸡汤: {'precision': 0.6129032258064516, 'recall': 0.59375, 'f1-score': 0.6031746031746031, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6521739130434783, 'recall': 0.7142857142857143, 'f1-score': 0.6818181818181819, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.75, 'recall': 0.3, 'f1-score': 0.4285714285714285, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.6901408450704225, 'recall': 0.7538461538461538, 'f1-score': 0.7205882352941175, 'support': 65}
+房产: {'precision': 0.8125, 'recall': 0.8666666666666667, 'f1-score': 0.8387096774193549, 'support': 15}
+股票-基本面分析: {'precision': 0.5714285714285714, 'recall': 0.5, 'f1-score': 0.5333333333333333, 'support': 8}
+其它: {'precision': 0.6153846153846154, 'recall': 0.7692307692307693, 'f1-score': 0.6837606837606838, 'support': 52}
+loss: 0.185 precision: 0.655 recall: 0.666 f1: 0.660 
+time consumption:0.19(min)
+saved the new best model with f1: 0.660
+
+epoch:20/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4262295081967213, 'recall': 0.5, 'f1-score': 0.4601769911504424, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.2857142857142857, 'f1-score': 0.4444444444444445, 'support': 7}
+鸡汤: {'precision': 0.5862068965517241, 'recall': 0.53125, 'f1-score': 0.5573770491803278, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6363636363636364, 'recall': 0.6666666666666666, 'f1-score': 0.6511627906976744, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.5, 'f1-score': 0.6666666666666666, 'support': 6}
+股票-技术面分析: {'precision': 0.8, 'recall': 0.4, 'f1-score': 0.5333333333333333, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.7205882352941176, 'recall': 0.7538461538461538, 'f1-score': 0.7368421052631577, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.6666666666666666, 'recall': 0.5, 'f1-score': 0.5714285714285715, 'support': 8}
+其它: {'precision': 0.6031746031746031, 'recall': 0.7307692307692307, 'f1-score': 0.6608695652173913, 'support': 52}
+loss: 0.184 precision: 0.649 recall: 0.653 f1: 0.651 
+time consumption:0.19(min)
+
+epoch:21/100
+start evaluate engines...
+
+泛财经: {'precision': 0.49019607843137253, 'recall': 0.4807692307692308, 'f1-score': 0.4854368932038835, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+鸡汤: {'precision': 0.59375, 'recall': 0.59375, 'f1-score': 0.59375, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.64, 'recall': 0.7619047619047619, 'f1-score': 0.6956521739130435, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.704225352112676, 'recall': 0.7692307692307693, 'f1-score': 0.7352941176470589, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.6666666666666666, 'recall': 0.5, 'f1-score': 0.5714285714285715, 'support': 8}
+其它: {'precision': 0.5901639344262295, 'recall': 0.6923076923076923, 'f1-score': 0.6371681415929203, 'support': 52}
+loss: 0.182 precision: 0.661 recall: 0.666 f1: 0.664 
+time consumption:0.20(min)
+saved the new best model with f1: 0.664
+
+epoch:22/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4482758620689655, 'recall': 0.5, 'f1-score': 0.4727272727272727, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 1.0, 'recall': 0.2857142857142857, 'f1-score': 0.4444444444444445, 'support': 7}
+鸡汤: {'precision': 0.6071428571428571, 'recall': 0.53125, 'f1-score': 0.5666666666666667, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.625, 'recall': 0.7142857142857143, 'f1-score': 0.6666666666666666, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.7384615384615385, 'recall': 0.7384615384615385, 'f1-score': 0.7384615384615385, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.5714285714285714, 'recall': 0.5, 'f1-score': 0.5333333333333333, 'support': 8}
+其它: {'precision': 0.6153846153846154, 'recall': 0.7692307692307693, 'f1-score': 0.6837606837606838, 'support': 52}
+loss: 0.182 precision: 0.661 recall: 0.666 f1: 0.664 
+time consumption:0.21(min)
+
+epoch:23/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4727272727272727, 'recall': 0.5, 'f1-score': 0.48598130841121495, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+鸡汤: {'precision': 0.5862068965517241, 'recall': 0.53125, 'f1-score': 0.5573770491803278, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.625, 'recall': 0.7142857142857143, 'f1-score': 0.6666666666666666, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.7352941176470589, 'recall': 0.7692307692307693, 'f1-score': 0.7518796992481205, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.5714285714285714, 'recall': 0.5, 'f1-score': 0.5333333333333333, 'support': 8}
+其它: {'precision': 0.6031746031746031, 'recall': 0.7307692307692307, 'f1-score': 0.6608695652173913, 'support': 52}
+loss: 0.181 precision: 0.661 recall: 0.666 f1: 0.664 
+time consumption:0.20(min)
+
+epoch:24/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4642857142857143, 'recall': 0.5, 'f1-score': 0.4814814814814815, 'support': 52}
+创业: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+美女: {'precision': 0.6666666666666666, 'recall': 0.2857142857142857, 'f1-score': 0.4, 'support': 7}
+鸡汤: {'precision': 0.5666666666666667, 'recall': 0.53125, 'f1-score': 0.5483870967741935, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.625, 'recall': 0.7142857142857143, 'f1-score': 0.6666666666666666, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.746268656716418, 'recall': 0.7692307692307693, 'f1-score': 0.7575757575757576, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.5, 'recall': 0.5, 'f1-score': 0.5, 'support': 8}
+其它: {'precision': 0.6065573770491803, 'recall': 0.7115384615384616, 'f1-score': 0.654867256637168, 'support': 52}
+loss: 0.181 precision: 0.658 recall: 0.662 f1: 0.660 
+time consumption:0.21(min)
+
+epoch:25/100
+start evaluate engines...
+
+泛财经: {'precision': 0.45614035087719296, 'recall': 0.5, 'f1-score': 0.4770642201834862, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+美女: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+鸡汤: {'precision': 0.5862068965517241, 'recall': 0.53125, 'f1-score': 0.5573770491803278, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6521739130434783, 'recall': 0.7142857142857143, 'f1-score': 0.6818181818181819, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.734375, 'recall': 0.7230769230769231, 'f1-score': 0.7286821705426355, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.4444444444444444, 'recall': 0.5, 'f1-score': 0.47058823529411764, 'support': 8}
+其它: {'precision': 0.6129032258064516, 'recall': 0.7307692307692307, 'f1-score': 0.6666666666666667, 'support': 52}
+loss: 0.181 precision: 0.652 recall: 0.656 f1: 0.654 
+time consumption:0.21(min)
+
+epoch:26/100
+start evaluate engines...
+
+泛财经: {'precision': 0.45614035087719296, 'recall': 0.5, 'f1-score': 0.4770642201834862, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+美女: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+鸡汤: {'precision': 0.5862068965517241, 'recall': 0.53125, 'f1-score': 0.5573770491803278, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6521739130434783, 'recall': 0.7142857142857143, 'f1-score': 0.6818181818181819, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.734375, 'recall': 0.7230769230769231, 'f1-score': 0.7286821705426355, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 3}
+股票-基本面分析: {'precision': 0.5, 'recall': 0.5, 'f1-score': 0.5, 'support': 8}
+其它: {'precision': 0.6129032258064516, 'recall': 0.7307692307692307, 'f1-score': 0.6666666666666667, 'support': 52}
+loss: 0.181 precision: 0.655 recall: 0.659 f1: 0.657 
+time consumption:0.21(min)
+
+epoch:27/100
+start evaluate engines...
+
+泛财经: {'precision': 0.46551724137931033, 'recall': 0.5192307692307693, 'f1-score': 0.49090909090909085, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+美女: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+鸡汤: {'precision': 0.5862068965517241, 'recall': 0.53125, 'f1-score': 0.5573770491803278, 'support': 32}
+数字货币: {'precision': 0.9, 'recall': 0.84375, 'f1-score': 0.870967741935484, 'support': 32}
+储蓄: {'precision': 0.6521739130434783, 'recall': 0.7142857142857143, 'f1-score': 0.6818181818181819, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.734375, 'recall': 0.7230769230769231, 'f1-score': 0.7286821705426355, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.3333333333333333, 'f1-score': 0.5, 'support': 3}
+股票-基本面分析: {'precision': 0.4444444444444444, 'recall': 0.5, 'f1-score': 0.47058823529411764, 'support': 8}
+其它: {'precision': 0.6229508196721312, 'recall': 0.7307692307692307, 'f1-score': 0.672566371681416, 'support': 52}
+loss: 0.181 precision: 0.655 recall: 0.659 f1: 0.657 
+time consumption:0.21(min)
+
+epoch:28/100
+start evaluate engines...
+
+泛财经: {'precision': 0.45614035087719296, 'recall': 0.5, 'f1-score': 0.4770642201834862, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+美女: {'precision': 0.4, 'recall': 0.2857142857142857, 'f1-score': 0.3333333333333333, 'support': 7}
+鸡汤: {'precision': 0.5483870967741935, 'recall': 0.53125, 'f1-score': 0.5396825396825397, 'support': 32}
+数字货币: {'precision': 0.8709677419354839, 'recall': 0.84375, 'f1-score': 0.8571428571428571, 'support': 32}
+储蓄: {'precision': 0.6666666666666666, 'recall': 0.6666666666666666, 'f1-score': 0.6666666666666666, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.734375, 'recall': 0.7230769230769231, 'f1-score': 0.7286821705426355, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 3}
+股票-基本面分析: {'precision': 0.5, 'recall': 0.5, 'f1-score': 0.5, 'support': 8}
+其它: {'precision': 0.6166666666666667, 'recall': 0.7115384615384616, 'f1-score': 0.6607142857142857, 'support': 52}
+loss: 0.182 precision: 0.649 recall: 0.653 f1: 0.651 
+time consumption:0.22(min)
+
+epoch:29/100
+start evaluate engines...
+
+泛财经: {'precision': 0.4642857142857143, 'recall': 0.5, 'f1-score': 0.4814814814814815, 'support': 52}
+创业: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+美女: {'precision': 0.5, 'recall': 0.2857142857142857, 'f1-score': 0.36363636363636365, 'support': 7}
+鸡汤: {'precision': 0.5625, 'recall': 0.5625, 'f1-score': 0.5625, 'support': 32}
+数字货币: {'precision': 0.8709677419354839, 'recall': 0.84375, 'f1-score': 0.8571428571428571, 'support': 32}
+储蓄: {'precision': 0.6818181818181818, 'recall': 0.7142857142857143, 'f1-score': 0.6976744186046512, 'support': 21}
+基金: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 6}
+股票-技术面分析: {'precision': 0.8333333333333334, 'recall': 0.5, 'f1-score': 0.625, 'support': 10}
+税务: {'precision': 0.7777777777777778, 'recall': 1.0, 'f1-score': 0.8750000000000001, 'support': 7}
+股票-其他: {'precision': 0.734375, 'recall': 0.7230769230769231, 'f1-score': 0.7286821705426355, 'support': 65}
+房产: {'precision': 0.7647058823529411, 'recall': 0.8666666666666667, 'f1-score': 0.8125, 'support': 15}
+股票-行业分析: {'precision': 1.0, 'recall': 0.6666666666666666, 'f1-score': 0.8, 'support': 3}
+股票-基本面分析: {'precision': 0.5, 'recall': 0.5, 'f1-score': 0.5, 'support': 8}
+其它: {'precision': 0.6166666666666667, 'recall': 0.7115384615384616, 'f1-score': 0.6607142857142857, 'support': 52}
+loss: 0.183 precision: 0.655 recall: 0.659 f1: 0.657 
+time consumption:0.21(min)
+early stopped, no progress obtained within 8 epochs
+overall best f1 is 0.6635220125786164 at 21 epoch
+total training time consumption: 5.716(min)

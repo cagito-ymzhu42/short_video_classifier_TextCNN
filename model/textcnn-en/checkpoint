@@ -1,0 +1,4 @@
+model_checkpoint_path: "textcnn-en-15"
+all_model_checkpoint_paths: "textcnn-en-15"
+all_model_checkpoint_timestamps: 1653017552.1673079
+last_preserved_timestamp: 1653017306.9430034
