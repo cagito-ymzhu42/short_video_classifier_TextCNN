@@ -18,12 +18,12 @@ from conf.config import stop_file, dict_file
 from conf.config import token2id_ch_path, token2id_en_path
 from conf.config import fasttext_ch_path, fasttext_en_path, textcnn_en_path, textcnn_ch_path
 
-from dd_nlp_arsenal.processor.tokenizer.nezha import SentenceTokenizer
-from dd_nlp_arsenal.factory.task.cls_task.sentence_cls_task import SentenceCLSTask, logging
-from dd_nlp_arsenal.model.text_cls.bert_model import BertClsModel, BertAttClsModel
+from pretrained_pipeline.processor.tokenizer.nezha import SentenceTokenizer
+from pretrained_pipeline.factory.task.cls_task.sentence_cls_task import SentenceCLSTask, logging
+from pretrained_pipeline.model.text_cls.bert_model import BertClsModel, BertAttClsModel
 
-from dd_nlp_arsenal.factory.untils.tools import seed_torch
-from dd_nlp_arsenal.factory.untils.opt import get_default_bert_optimizer
+from pretrained_pipeline.factory.untils.tools import seed_torch
+from pretrained_pipeline.factory.untils.opt import get_default_bert_optimizer
 
 # 加载预训练模型
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
