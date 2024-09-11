@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 import requests
 
-# server_ip = '10.210.24.255'
-server_ip = '10.60.6.29'
-server_port = '8085'
-# server_port = '8086'
+server_ip = ''
+server_port = ''
 # video_desc = "黃國英：我不相信nft ！"
 # video_desc = "10個財務比率，算出公司內在價值。"
 # video_title = "1分鐘系列 - 看懂損益表"
